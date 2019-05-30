@@ -9,6 +9,6 @@ node {
       stash 'repo'
    }
    stage('Deploy') {
-       sshPublisher(publishers: [sshPublisherDesc(configName: 'Wordpress Dev', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'unzip -o /home/vagrant/wp-content/data.zip', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'data.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+       sshPublisher(publishers: [sshPublisherDesc(configName: 'Wordpress Prod', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'unzip -o /home/vagrant/wp-content/data.zip', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'data.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
    }
 }
